@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1115</width>
+    <height>850</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTableWidget" name="table">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>320</y>
+     <width>951</width>
+     <height>471</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="combo_menu">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>230</y>
+     <width>131</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>해쉬브라운버거</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>와퍼</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>빅맥</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>새우버거</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>치킨버거</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>해쉬브라운</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>감자튀김</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>스프라이트</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>해쉬브라운버거세트</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>와퍼세트</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>빅맥세트</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>새우버거세트</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>치킨버거세트</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>콜라</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="menu_btn">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>237</y>
+     <width>93</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>메뉴판</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="call_btn">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>240</y>
+     <width>93</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>주문하기</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="combo_amount">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>230</y>
+     <width>94</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>5</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>65</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>주문하기</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="main_btn">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>50</y>
+     <width>111</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>메인으로</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="search_btn">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>180</y>
+     <width>93</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>주문조회</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cal_btn">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>230</y>
+     <width>93</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>정산하기</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancel_btn">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>180</y>
+     <width>93</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>주문취소</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
