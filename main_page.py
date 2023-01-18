@@ -45,6 +45,7 @@ class main_page(QWidget, form_class):
                              db='ham', charset='utf8')
             self.cursor = conn.cursor()
             self.cursor.execute(f"update orders set 확인='0'")
+            conn.commit()
 
         elif self.ck == 0:
             widget.setCurrentIndex(0)

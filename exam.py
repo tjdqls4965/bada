@@ -72,6 +72,11 @@ hg = cursor.fetchall()
 print(hg)
 print(hg[0][0],hg[0][2])
 
+cursor.execute("SELECT menu FROM mae")
+mu = cursor.fetchall()
+print(mu)
+
+
 
 
 # (d[0][3+i])==0: break

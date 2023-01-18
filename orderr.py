@@ -153,10 +153,24 @@ class orde(QMainWindow,form_class):
 
         self.cursor.execute(f"SELECT 주문상품,수량 FROM orders where 이름 = '{self.a}' and 주문상태 = '정산완료'")
         self.e = self.cursor.fetchall()
+
+
         # 00은 메뉴 01은 수량
         for i in range(0,len(self.e)):
             self.cursor.execute(f"update bom set sell_number=sell_number+{self.e[i][1]} where menu='{self.e[i][0]}'")
-        conn.commit()
+            conn.commit()
+
+            self.cursor.execute(f"SELECT menu,menu_price FROM ham.bom where menu='{self.e[i][0]}'")
+            com = self.cursor.fetchall()
+            print(com[0][1],"!!!")
+
+            # complete=com[0][1]*self.e[i][1]
+            # print(complete,"@@@")
+            self.cursor.execute(f"update mae set mae1=mae1+({com[0][1]}*{self.e[i][1]})")
+            conn.commit()
+
+
+
 
         self.cursor.execute(f"delete from orders where 주문상태='정산완료'")
         conn.commit()
