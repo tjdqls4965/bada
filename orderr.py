@@ -169,6 +169,15 @@ class orde(QMainWindow,form_class):
             self.cursor.execute(f"update mae set mae1=mae1+({com[0][1]}*{self.e[i][1]})")
             conn.commit()
 
+        self.cursor.execute("SELECT * FROM mae")
+        mu = self.cursor.fetchall()
+
+        self.cursor.execute(f"insert into sell2 values({mu[0][0]},{mu[0][1]},{mu[0][2]})")
+        conn.commit()
+
+
+
+
 
 
 

@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(194, 255, 184);
+background-color: rgb(244, 255, 237);</string>
+  </property>
   <widget class="QTableWidget" name="table">
    <property name="geometry">
     <rect>
@@ -21,6 +25,9 @@
      <width>951</width>
      <height>471</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
   </widget>
   <widget class="QComboBox" name="combo_menu">
@@ -31,6 +38,12 @@
      <width>131</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(58, 134, 255);
+	background-color: white;
+	border: 2px solid rgb(58, 134, 255);
+	border-radius: 5px;</string>
    </property>
    <item>
     <property name="text">
@@ -112,6 +125,11 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+	background-color:qlineargradient(spread:reflect, x1:0.5, y1:0.5, x2:1, y2:0.5, stop:0 rgba(255, 199, 0, 255), stop:1 rgba(192, 5, 67, 255));
+	border-radius: 20px;</string>
+   </property>
    <property name="text">
     <string>메뉴판</string>
    </property>
@@ -125,6 +143,11 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+	background-color:qlineargradient(spread:reflect, x1:0.5, y1:0.5, x2:1, y2:0.5, stop:0 rgba(255, 199, 0, 255), stop:1 rgba(192, 5, 67, 255));
+	border-radius: 20px;</string>
+   </property>
    <property name="text">
     <string>주문하기</string>
    </property>
@@ -137,6 +160,12 @@
      <width>94</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(58, 134, 255);
+	background-color: white;
+	border: 2px solid rgb(58, 134, 255);
+	border-radius: 5px;</string>
    </property>
    <item>
     <property name="text">
@@ -173,6 +202,9 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <property name="text">
     <string>주문하기</string>
    </property>
@@ -185,6 +217,12 @@
      <width>111</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(58, 134, 255);
+	background-color: white;
+	border: 2px solid rgb(58, 134, 255);
+	border-radius: 5px;</string>
    </property>
    <property name="text">
     <string>메인으로</string>
@@ -199,6 +237,11 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+	background-color:qlineargradient(spread:reflect, x1:0.5, y1:0.5, x2:1, y2:0.5, stop:0 rgba(255, 199, 0, 255), stop:1 rgba(192, 5, 67, 255));
+	border-radius: 20px;</string>
+   </property>
    <property name="text">
     <string>주문조회</string>
    </property>
@@ -212,6 +255,12 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(58, 134, 255);
+	background-color: white;
+	border: 2px solid rgb(58, 134, 255);
+	border-radius: 20px;</string>
+   </property>
    <property name="text">
     <string>정산하기</string>
    </property>
@@ -224,6 +273,11 @@
      <width>93</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+	background-color:qlineargradient(spread:reflect, x1:0.5, y1:0.5, x2:1, y2:0.5, stop:0 rgba(255, 199, 0, 255), stop:1 rgba(192, 5, 67, 255));
+	border-radius: 20px;</string>
    </property>
    <property name="text">
     <string>주문취소</string>

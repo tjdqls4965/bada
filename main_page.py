@@ -6,7 +6,10 @@ import csv
 from PyQt5 import QtWidgets
 import pyautogui
 import threading
-
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import font_manager, rc
+import pandas as pd
 
 # 1페이지
 from orderr import orde
@@ -30,8 +33,56 @@ class main_page(QWidget, form_class):
         self.login_section.clicked.connect(self.login_page)
         self.order_section.clicked.connect(self.order_page)
         self.inquire_section.clicked.connect(self.inquire_page)
+        self.graph_btn.clicked.connect(self.stick)
+        font_path = "c:\windows\Fonts\gulim.ttc"
+        font = font_manager.FontProperties(fname=font_path).get_name()
+        rc('font', family=font)
         # orderr.call_btn.clicked.connect(self.call)
         # self.call()
+
+    def stick(self):
+        conn = p.connect(host='localhost', port=3306, user='root', password='1234',
+                         db='ham', charset='utf8')
+        self.cursor = conn.cursor()
+        self.cursor.execute("SELECT * FROM sell2")
+        ma = self.cursor.fetchall()
+        k = len(ma)
+        # 원래수치,
+        print(ma[k - 1], ma[k - 2], ma[k - 3])
+
+
+        area = ['금일','전날','이틀전']
+        # 비율을 담는 리스트
+        percent=[ma[k-1][0],ma[k-2][0],ma[k-3][0]]
+        percent_two=[ma[k-1][1],ma[k-2][1],ma[k-3][1]]
+        percent_three=[ma[k-1][2],ma[k-2][2],ma[k-3][2]]
+
+        plt.rc('font', size=6)
+        plt.figure(figsize=(15, 12))
+        conv_list1 = list(percent)
+        conv_list2 = list(percent_two)
+        conv_list3 = list(percent_three)
+        # 1개바의 너비
+        bar_width = 0.2
+        # 도시의 수 18개
+        index = np.arange(3)
+
+        # 판다에 있는 기능 활용, '초등학생비율, 혼인율, 1인가구' 는 우측상단에 뜨게 됨 , index=area는 지역으로 x축
+        df = pd.DataFrame({'매출': conv_list1, '비용': conv_list2, '순이익': conv_list3}, index=area)
+        # 바사이의 간격을 설정함
+        b1 = plt.bar(index, df['매출'], bar_width, alpha=0.4, color='b', label='매출')
+        b2 = plt.bar(index + bar_width, df['비용'], bar_width, alpha=0.4, color='g', label='비용')
+        b3 = plt.bar(index + 2 * bar_width, df['순이익'] / 4, bar_width, alpha=0.4, color='r', label='순이익')
+
+        plt.xticks(np.arange(bar_width, len(area) + bar_width, 1), area)
+        # x축과 y축에 나타나는 비율
+        plt.xlabel('날짜', size=10)
+        plt.ylabel('누적매출', size=10)
+        plt.legend()
+        plt.show()
+
+        plt.show()
+
 
     def inquire_page(self):
         if self.ck == 1:

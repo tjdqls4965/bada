@@ -22,6 +22,9 @@
      <height>781</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);</string>
+   </property>
    <property name="currentIndex">
     <number>1</number>
    </property>
@@ -168,6 +171,11 @@
        <height>15</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(58, 134, 255);
+	background-color: white;
+	border: 2px solid rgb(58, 134, 255);</string>
+     </property>
      <property name="text">
       <string>로그인</string>
      </property>
@@ -180,6 +188,11 @@
        <width>64</width>
        <height>15</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(58, 134, 255);
+	background-color: white;
+	border: 2px solid rgb(58, 134, 255);</string>
      </property>
      <property name="text">
       <string>ID</string>
@@ -194,6 +207,11 @@
        <height>15</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(58, 134, 255);
+	background-color: white;
+	border: 2px solid rgb(58, 134, 255);</string>
+     </property>
      <property name="text">
       <string>PS</string>
      </property>
@@ -207,6 +225,14 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+	background-color: rgb(58, 134, 255);
+	border-radius: 20px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
     </widget>
     <widget class="QLineEdit" name="ps_2">
      <property name="geometry">
@@ -217,6 +243,11 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+	background-color: rgb(58, 134, 255);
+	border-radius: 20px;</string>
+     </property>
     </widget>
     <widget class="QPushButton" name="login_action">
      <property name="geometry">
@@ -226,6 +257,11 @@
        <width>121</width>
        <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 20px;</string>
      </property>
      <property name="text">
       <string>로그인</string>
@@ -240,6 +276,11 @@
        <height>51</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 20px;</string>
+     </property>
      <property name="text">
       <string>회원가입</string>
      </property>
@@ -252,6 +293,11 @@
        <width>121</width>
        <height>81</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 20px;</string>
      </property>
      <property name="text">
       <string>메인으로</string>

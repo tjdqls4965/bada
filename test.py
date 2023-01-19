@@ -10,13 +10,9 @@ class tes(QMainWindow,form_class):
         super().__init__()
         self.setupUi(self)
         self.setWindowTitle('테스트 하기')
-        self.start_btn.show()
-        self.stop_btn.show()
-        self.restart_btn.show()
-
-        self.combo_menu.hide()
-        self.receive_btn.hide()
-        self.give_btn.hide()
+        self.stackedWidget.setCurrentIndex(0)
+        self.go_btn.clicked.connect(self.go)
+        self.back_btn.clicked.connect(self.back)
         self.table.clear()
         self.main_btn.clicked.connect(self.go_main)
         self.start_btn.clicked.connect(self.star)
@@ -25,6 +21,12 @@ class tes(QMainWindow,form_class):
         self.receive_btn.clicked.connect(self.re)
         self.give_btn.clicked.connect(self.give)
         self.power = True
+    def go(self):
+        self.stackedWidget.setCurrentIndex(1)
+    def back(self):
+        self.stackedWidget.setCurrentIndex(0)
+
+
 
     def go_main(self):
         self.parent().setCurrentIndex(0)
@@ -60,8 +62,8 @@ class tes(QMainWindow,form_class):
         # self.cursor.execute(f"insert into sell2 values({hg[0][0]},{hg[0][1]},{hg[0][2]})")
         # conn.commit()
 
-        self.cursor.execute("update sell set sale=0")
-        conn.commit()
+        # self.cursor.execute("update sell set sale=0")
+        # conn.commit()
 
         # self.cursor.execute("update sell set cost=0")
         # conn.commit()
@@ -74,20 +76,81 @@ class tes(QMainWindow,form_class):
         self.cursor.execute("delete from test")
         conn.commit()
 
-        self.cursor.execute("delete from inven2")
-        conn.commit()
+        a1=['pic','chechap']
+        self.bo=self.combo_menu.currentText()
+        if self.bo in a1:
+            self.cursor.execute("update sell set cost=cost+5000")
+            conn.commit()
 
-        self.cursor.execute("insert into inven2 values(40,30,40,40,20,100,100,40,20,20,20,20,20,100,100,20,100,100,100,1000,20,20)")
-        conn.commit()
+            self.cursor.execute(f"update inven2 set {self.bo}={self.bo}+50")
+            conn.commit()
+            QMessageBox.information(self, '발주', f'{self.bo} 발주완료')
+
+        a2=['beef','chic','shrimp','hashbrown']
+        if self.bo in a2:
+            self.cursor.execute("update sell set cost=cost+25000")
+            conn.commit()
+
+            self.cursor.execute(f"update inven2 set {self.bo}={self.bo}+50")
+            conn.commit()
+
+        a3=['hub','pepper','mayo','stake_sauce','tartar_sauce','derry_sauce']
+        if self.bo in a3:
+            self.cursor.execute("update sell set cost=cost+5000")
+            conn.commit()
+
+            self.cursor.execute(f"update inven2 set {self.bo}={self.bo}+500")
+            conn.commit()
+
+        a4=['onion','tomato','yang','cheese']
+        if self.bo in a4:
+            self.cursor.execute("update sell set cost=cost+10000")
+            conn.commit()
+
+            self.cursor.execute(f"update inven2 set {self.bo}={self.bo}+50")
+            conn.commit()
+
+        a5=['cola','sprite']
+        if self.bo in a5:
+            self.cursor.execute("update sell set cost=cost+24000")
+            conn.commit()
+
+            self.cursor.execute(f"update inven2 set {self.bo}={self.bo}+30")
+            conn.commit()
+
+        if self.bo == 'sugar':
+            self.cursor.execute("update sell set cost=cost+3000")
+            conn.commit()
+
+            self.cursor.execute(f"update inven2 set {self.bo}={self.bo}+1000")
+            conn.commit()
+
+        if self.bo == 'egg':
+            self.cursor.execute("update sell set cost=cost+15000")
+            conn.commit()
+
+            self.cursor.execute(f"update inven2 set {self.bo}={self.bo}+50")
+            conn.commit()
+
+        if self.bo == 'potato':
+            self.cursor.execute("update sell set cost=cost+10000")
+            conn.commit()
+
+            self.cursor.execute(f"update inven2 set {self.bo}={self.bo}+2000")
+            conn.commit()
+
+        if self.bo == 'bun':
+            self.cursor.execute("update sell set cost=cost+20000")
+            conn.commit()
+
+            self.cursor.execute(f"update inven2 set {self.bo}={self.bo}+100")
+            conn.commit()
+        QMessageBox.information(self, '발주', f'{self.bo} 발주완료')
+        self.cursor.execute(f"select * from bom inner join inven2 on menu='{self.bo}'")
+        a7 = self.cursor.fetchall()
 
         self.power = True
-        self.start_btn.show()
-        self.stop_btn.show()
-        self.restart_btn.show()
 
-        self.combo_menu.hide()
-        self.receive_btn.hide()
-        self.give_btn.hide()
         self.table.clear()
 
 
@@ -97,15 +160,33 @@ class tes(QMainWindow,form_class):
 
 
     def re(self):
-        self.make_tabel2()
+        conn = p.connect(host='localhost', port=3306, user='root', password='1234',
+                         db='ham', charset='utf8')
+        self.cursor = conn.cursor()
+        self.cursor.execute("SELECT * FROM inven2")
+        self.hk = self.cursor.fetchall()
+        self.tablee.setRowCount(len(self.hk))
+        self.tablee.setColumnCount(len(self.hk[0]))
+        self.tablee.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        for i in range(len(self.hk)):
+            for j in range(len(self.hk[0])):
+                self.tablee.setItem(i, j, QTableWidgetItem(str(self.hk[i][j])))
+    def mask(self):
+        conn = p.connect(host='localhost', port=3306, user='root', password='1234',
+                         db='ham', charset='utf8')
+        self.cursor = conn.cursor()
+        self.cursor.execute("SELECT * FROM inven2")
+        self.hk = self.cursor.fetchall()
+        self.tablee.setRowCount(len(self.hk))
+        self.tablee.setColumnCount(len(self.hk[0]))
+        self.tablee.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        for i in range(len(self.hk)):
+            for j in range(len(self.hk[0])):
+                self.tablee.setItem(i, j, QTableWidgetItem(str(self.hk[i][j])))
+
     def fa(self):
         if self.power == False:
-            self.start_btn.hide()
-            self.stop_btn.hide()
-            self.restart_btn.hide()
-            self.combo_menu.show()
-            self.receive_btn.show()
-            self.give_btn.show()
+
             self.table.clear()
             return
     def star(self):
@@ -149,13 +230,7 @@ class tes(QMainWindow,form_class):
                     print("재고소진")
                     self.power=False
                     self.fa()
-                    self.start_btn.hide()
-                    self.stop_btn.hide()
-                    self.restart_btn.hide()
-                    self.combo_menu.show()
-                    self.receive_btn.show()
-                    self.give_btn.show()
-                    self.table.clear()
+                    self.go()
                     return
 
 

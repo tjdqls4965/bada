@@ -22,6 +22,13 @@
      <height>791</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(66, 85, 16);
+background-color: rgb(255, 105, 75);</string>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
    <widget class="QWidget" name="page">
     <widget class="QPushButton" name="login_section">
      <property name="geometry">
@@ -31,6 +38,11 @@
        <width>291</width>
        <height>301</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 20px;</string>
      </property>
      <property name="text">
       <string>로그인</string>
@@ -58,6 +70,11 @@
        <height>301</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 20px;</string>
+     </property>
      <property name="text">
       <string>주문</string>
      </property>
@@ -71,8 +88,49 @@
        <height>301</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.857143, y2:0.857955, stop:0 rgba(10, 242, 251, 255), stop:1 rgba(224, 6, 159, 255));
+	border-radius: 20px;</string>
+     </property>
      <property name="text">
       <string>문의</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="graph_btn">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>90</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(58, 134, 255);
+	background-color: white;
+	border: 2px solid rgb(58, 134, 255);</string>
+     </property>
+     <property name="text">
+      <string>매출그래프</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="nxt">
+     <property name="geometry">
+      <rect>
+       <x>950</x>
+       <y>720</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(58, 134, 255);
+	background-color: white;
+	border: 2px solid rgb(58, 134, 255);</string>
+     </property>
+     <property name="text">
+      <string>다음페이지</string>
      </property>
     </widget>
    </widget>
