@@ -24,6 +24,10 @@ class log(QMainWindow,form_class):
         self.stackedWidget.setCurrentIndex(1)
     def go_main(self):
         self.parent().setCurrentIndex(0)
+    def a(self):
+        self.conn = p.connect(host='localhost', port=3306, user='root', password='1234',
+                              db='ham', charset='utf8')
+        self.cursor = self.conn.cursor()
 
 
     def login(self):

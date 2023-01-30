@@ -56,20 +56,7 @@ class tes(QMainWindow,form_class):
                          db='ham', charset='utf8')
         self.cursor = conn.cursor()
 
-        # self.cursor.execute(f"select * from sell")
-        # hg = self.cursor.fetchall()
-        #
-        # self.cursor.execute(f"insert into sell2 values({hg[0][0]},{hg[0][1]},{hg[0][2]})")
-        # conn.commit()
-
-        # self.cursor.execute("update sell set sale=0")
-        # conn.commit()
-
-        # self.cursor.execute("update sell set cost=0")
-        # conn.commit()
-        #
-        # self.cursor.execute("update sell set net_sale=0")
-        # conn.commit()
+        
 
 
 
@@ -146,8 +133,9 @@ class tes(QMainWindow,form_class):
             self.cursor.execute(f"update inven2 set {self.bo}={self.bo}+100")
             conn.commit()
         QMessageBox.information(self, '발주', f'{self.bo} 발주완료')
-        self.cursor.execute(f"select * from bom inner join inven2 on menu='{self.bo}'")
-        a7 = self.cursor.fetchall()
+
+        self.cursor.execute("update sell set net_sale=sale-cost")
+        conn.commit()
 
         self.power = True
 
